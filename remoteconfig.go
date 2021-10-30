@@ -62,6 +62,8 @@ func (rc *remoteConfig) fetch() error {
 
 	rc.File = file
 
+	log.Printf("fetched remoteconfig from %s", rc.URL)
+
 	return nil
 }
 
@@ -73,6 +75,5 @@ func (rc *remoteConfig) startRefresh() {
 			log.Printf("error fetching remoteconfig: %v", err)
 			continue
 		}
-		log.Println("fetched remoteconfig")
 	}
 }
